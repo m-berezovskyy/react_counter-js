@@ -23,6 +23,14 @@ export const App = () => {
   const add100 = event => {
     if (event) {
       setCount(prev => prev + 100);
+    } else {
+      setCount(prev => {
+        if (prev === 0 || prev === 100) {
+          return prev + 100;
+        }
+
+        return prev;
+      });
     }
   };
 
